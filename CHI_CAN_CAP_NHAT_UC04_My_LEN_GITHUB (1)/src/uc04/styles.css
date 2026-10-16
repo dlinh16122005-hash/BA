@@ -1,0 +1,296 @@
+/* CSS UC04 from My: all selectors scoped to .uc04-module. */
+.uc04-module {
+  --primary: #B42318;
+  --primary-hover: #912018;
+  --primary-soft: #FEF3F2;
+  --primary-border: #FECDCA;
+  --page-background: #F8FAFC;
+  --surface: #FFFFFF;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --border: #E2E8F0;
+  --disabled-background: #F1F5F9;
+  --disabled-text: #64748B;
+  --success-text: #166534;
+  --success-background: #F0FDF4;
+  --warning-text: #92400E;
+  --warning-background: #FFFBEB;
+  --error-text: #B91C1C;
+  --error-background: #FEF2F2;
+  --info-text: #334155;
+  --info-background: #F1F5F9;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --font-page: 28px;
+  --font-section: 18px;
+  --font-body: 16px;
+  --font-data: 14px;
+  --font-caption: 12px;
+  --sidebar-width: 240px;
+  --control-height: 40px;
+  --row-height: 52px;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-data);
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--page-background);
+  font-synthesis: none;
+}
+.uc04-module * { box-sizing: border-box }
+.uc04-module { margin: 0 }
+.uc04-module button, .uc04-module input, .uc04-module select { font: inherit }
+.uc04-module code { font-family: inherit }
+.uc04-module button { cursor: pointer }
+.uc04-module button, .uc04-module input, .uc04-module select { border-radius: var(--radius-control) }
+.uc04-module button:focus-visible, .uc04-module input:focus-visible, .uc04-module select:focus-visible, .uc04-module [tabindex]:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px }
+.uc04-module button:disabled, .uc04-module input:disabled, .uc04-module select:disabled { color: var(--disabled-text); background: var(--disabled-background); border-color: var(--border); cursor: not-allowed }
+.uc04-module h1, .uc04-module h2, .uc04-module p, .uc04-module dl, .uc04-module dd { margin: 0 }
+.uc04-module h1, .uc04-module .type-page { font-size: var(--font-page); font-weight: 600; letter-spacing: -.6px }
+.uc04-module h2 { font-size: var(--font-section); font-weight: 600 }
+.uc04-module strong { font-weight: 600 }
+.uc04-module small, .uc04-module .caption { font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module svg { flex-shrink: 0 }
+.uc04-module .button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); min-height: var(--control-height); padding: var(--space-2) var(--space-4); font-size: var(--font-data); font-weight: 500; border: 1px solid var(--border); text-decoration: none; transition: background .15s, border-color .15s }
+.uc04-module .button.primary { color: var(--surface); background: var(--primary); border-color: var(--primary) }
+.uc04-module .button.primary:hover:not(:disabled) { background: var(--primary-hover); border-color: var(--primary-hover) }
+.uc04-module .button.secondary { background: var(--surface); color: var(--text-primary) }
+.uc04-module .button.secondary:hover:not(:disabled) { background: var(--info-background) }
+.uc04-module .button.link { background: transparent; color: var(--primary); border-color: transparent; padding-inline: var(--space-2) }
+.uc04-module .button.link:hover:not(:disabled) { background: var(--primary-soft); color: var(--primary-hover) }
+.uc04-module .button:disabled { color: var(--disabled-text); background: var(--disabled-background); border-color: var(--border) }
+.uc04-module .spinner { height: var(--space-4); width: var(--space-4); border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin .7s linear infinite }
+@keyframes spin { to { transform: rotate(360deg) } }
+.uc04-module .actions { display: flex; gap: var(--space-2); align-items: center; flex-wrap: wrap }
+.uc04-module .sidebar { width: var(--sidebar-width); background: var(--surface); border-right: 1px solid var(--border); position: fixed; inset: 0 auto 0 0; display: flex; flex-direction: column; padding: var(--space-8) var(--space-4) 0; z-index: 10 }
+.uc04-module .brand { display: flex; align-items: center; gap: var(--space-3); color: var(--primary); font-size: 24px; font-weight: 700; letter-spacing: 1px; padding-inline: var(--space-2) }
+.uc04-module .brand span { display: block; font-size: var(--font-caption); letter-spacing: 2px; font-weight: 500; margin-top: var(--space-1); color: var(--text-secondary) }
+.uc04-module .brand-icon { background: var(--primary-soft); color: var(--primary); border-radius: var(--radius-card); padding: var(--space-2); display: grid; place-items: center }
+.uc04-module .nav-heading { margin: var(--space-8) var(--space-2) var(--space-4); color: var(--text-secondary); font-size: var(--font-caption); font-weight: 600 }
+.uc04-module .nav-static, .uc04-module .nav-active { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3); min-height: var(--row-height); font-size: var(--font-data) }
+.uc04-module .nav-static { color: var(--text-secondary) }
+.uc04-module .button.nav-active { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-border); justify-content: flex-start; padding: var(--space-3); margin-top: var(--space-2) }
+.uc04-module .sidebar-note { margin-top: auto; padding: var(--space-4); border: 1px solid var(--border); background: var(--page-background); border-radius: var(--radius-card); color: var(--text-secondary) }
+.uc04-module .sidebar-note strong { display: block; margin: var(--space-2) 0; font-size: var(--font-data) }
+.uc04-module .sidebar-note p { font-size: var(--font-caption) }
+.uc04-module .sidebar-bottom { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-6) 0; margin-top: var(--space-6); border-top: 1px solid var(--border) }
+.uc04-module .sidebar-bottom strong, .uc04-module .sidebar-bottom span { display: block }
+.uc04-module .sidebar-bottom span { color: var(--text-secondary); font-size: var(--font-caption) }
+.uc04-module .avatar { width: var(--control-height); height: var(--control-height); display: grid; place-items: center; border-radius: 50%; color: var(--primary); background: var(--primary-soft); font-weight: 600 }
+.uc04-module .main-shell { margin-left: var(--sidebar-width); min-width: 0 }
+.uc04-module .topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-6); min-height: 72px; background: var(--surface); border-bottom: 1px solid var(--border); color: var(--text-secondary) }
+.uc04-module .topbar>div { display: flex; gap: var(--space-3); align-items: center }
+.uc04-module .topbar strong { font-weight: 500; color: var(--text-primary) }
+.uc04-module .top-right, .uc04-module .top-date { display: flex; align-items: center; gap: var(--space-2) }
+.uc04-module .prototype { border: 1px solid var(--primary-border); background: var(--primary-soft); color: var(--primary); border-radius: var(--radius-control); padding: var(--space-1) var(--space-2); font-size: var(--font-caption); font-weight: 600 }
+.uc04-module main { max-width: 1680px; padding: var(--space-6); margin-inline: auto; min-width: 0 }
+.uc04-module .breadcrumb { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .breadcrumb strong { font-weight: 500 }
+.uc04-module .page-heading { margin: var(--space-6) 0 }
+.uc04-module .eyebrow { color: var(--text-secondary); font-size: var(--font-caption); font-weight: 600; letter-spacing: 1px; margin-bottom: var(--space-2) }
+.uc04-module .page-heading p { color: var(--text-secondary); font-size: var(--font-body); margin-top: var(--space-2) }
+.uc04-module .steps { display: flex; align-items: center; gap: var(--space-6); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-6); margin-bottom: var(--space-6) }
+.uc04-module .step { display: flex; align-items: center; gap: var(--space-2); color: var(--disabled-text); flex: 1 }
+.uc04-module .step:not(:last-child)::after { content: ""; height: 1px; background: var(--border); flex: 1; margin-left: var(--space-4) }
+.uc04-module .step>span { width: var(--space-8); height: var(--space-8); border: 1px solid var(--border); border-radius: 50%; display: grid; place-items: center; flex-shrink: 0 }
+.uc04-module .step.current { color: var(--primary); font-weight: 600 }
+.uc04-module .step.current>span { color: var(--surface); background: var(--primary); border-color: var(--primary) }
+.uc04-module .step.complete { color: var(--success-text) }
+.uc04-module .step.complete>span { background: var(--success-background); color: var(--success-text); border-color: var(--success-text) }
+.uc04-module .step.stalled { color: var(--warning-text) }
+.uc04-module .step.stalled>span { background: var(--warning-background); border-color: var(--warning-text) }
+.uc04-module .stats-scope { font-size: var(--font-caption); color: var(--text-secondary); margin-bottom: var(--space-2) }
+.uc04-module .stats { display: grid; grid-template-columns: 1fr 1.35fr 1fr; gap: var(--space-6); margin-bottom: var(--space-6) }
+.uc04-module .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; min-width: 0 }
+.uc04-module .stat { display: flex; gap: var(--space-4); align-items: center; padding: var(--space-6) }
+.uc04-module .stat-icon { display: grid; place-items: center; padding: var(--space-3); border-radius: var(--radius-card); background: var(--primary-soft); color: var(--primary) }
+.uc04-module .stat>div { min-width: 0 }
+.uc04-module .stat span { font-size: var(--font-data); color: var(--text-secondary) }
+.uc04-module .stat strong { display: block; font-size: 24px; margin-top: var(--space-2); font-variant-numeric: tabular-nums; white-space: nowrap }
+.uc04-module .stat small { font-size: var(--font-data); font-weight: 400 }
+.uc04-module .card-heading { display: flex; gap: var(--space-3); align-items: center; padding: var(--space-6); border-bottom: 1px solid var(--border) }
+.uc04-module .count { padding: var(--space-1) var(--space-2); background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-border); border-radius: var(--radius-control); font-size: var(--font-data); font-weight: 600 }
+.uc04-module .heading-note { margin-left: auto; font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .filters { display: flex; align-items: flex-end; flex-wrap: wrap; gap: var(--space-3); padding: var(--space-6) }
+.uc04-module label { display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--font-data); font-weight: 500; color: var(--text-secondary); min-width: 0 }
+.uc04-module .filters>label:first-child { width: 255px }
+.uc04-module .search-label { flex: 1; min-width: 240px }
+.uc04-module select, .uc04-module input { min-height: var(--control-height); border: 1px solid var(--border); background: var(--surface); color: var(--text-primary); padding: var(--space-2) var(--space-3); min-width: 0; width: 100% }
+.uc04-module select:hover:not(:disabled), .uc04-module input:hover:not(:disabled) { border-color: var(--primary) }
+.uc04-module input::placeholder { color: var(--disabled-text); font-size: var(--font-data) }
+.uc04-module .search-input { position: relative; display: flex; align-items: center; width: 100% }
+.uc04-module .search-input>svg { position: absolute; left: var(--space-3); color: var(--disabled-text); pointer-events: none }
+.uc04-module .search-input input { padding-left: var(--space-8) }
+.uc04-module .table-wrap { overflow-x: auto; width: 100% }
+.uc04-module table { width: 100%; border-collapse: collapse; text-align: left; font-size: var(--font-data) }
+.uc04-module th { background: var(--page-background); color: var(--text-secondary); font-weight: 500; border-block: 1px solid var(--border); padding: var(--space-3) var(--space-4); text-align: left }
+.uc04-module td { padding: var(--space-3) var(--space-4); height: var(--row-height); border-bottom: 1px solid var(--border); vertical-align: middle }
+.uc04-module .list-card table { min-width: 1010px }
+.uc04-module tbody tr:hover { background: var(--page-background) }
+.uc04-module .number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }
+.uc04-module .amount { font-weight: 600 }
+.uc04-module .doc-code { font-size: var(--font-data); color: var(--text-primary) }
+.uc04-module .customer-name { font-weight: 500; white-space: nowrap }
+.uc04-module .cell-sub { display: block; margin-top: var(--space-1); font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .customer-code { font-size: var(--font-data) }
+.uc04-module .badge { display: inline-flex; align-items: center; gap: var(--space-2); border-radius: var(--radius-control); padding: var(--space-1) var(--space-2); font-size: var(--font-data); white-space: nowrap; font-weight: 500 }
+.uc04-module .dot { height: 5px; width: 5px; background: currentColor; border-radius: 50% }
+.uc04-module .tone-info { background: var(--info-background); color: var(--info-text) }
+.uc04-module .tone-success { background: var(--success-background); color: var(--success-text) }
+.uc04-module .tone-warning { background: var(--warning-background); color: var(--warning-text) }
+.uc04-module .tone-error { background: var(--error-background); color: var(--error-text) }
+.uc04-module .table-bottom { display: flex; justify-content: space-between; gap: var(--space-4); padding: var(--space-4) var(--space-6); font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .alert { display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); border-radius: var(--radius-control); border: 1px solid currentColor }
+.uc04-module .alert-content { min-width: 0; flex: 1 }
+.uc04-module .alert-content>strong { display: block; font-size: var(--font-data); line-height: 1.5 }
+.uc04-module .alert-content p { margin-top: var(--space-2) }
+.uc04-module .alert-content>.actions { margin-top: var(--space-4) }
+.uc04-module .list-card+.alert { margin-top: var(--space-6) }
+.uc04-module .list-card>.alert { margin: 0 var(--space-6) var(--space-6) }
+.uc04-module .list-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin: var(--space-6) 0 }
+.uc04-module .list-footer>span { font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .detail-toolbar { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-4) }
+.uc04-module .detail-toolbar>div { display: flex; align-items: center; gap: var(--space-2); flex-wrap: wrap }
+.uc04-module .detail-grid { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: var(--space-6); align-items: start }
+.uc04-module .detail-left { display: flex; flex-direction: column; gap: var(--space-6); min-width: 0 }
+.uc04-module .section { padding: var(--space-6) }
+.uc04-module .section-title { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin-bottom: var(--space-6) }
+.uc04-module .section-title h2 { overflow-wrap: anywhere }
+.uc04-module .fields { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); min-width: 0 }
+.uc04-module .field { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0 }
+.uc04-module .field dt { font-size: var(--font-data); color: var(--text-secondary) }
+.uc04-module .field dd { font-size: var(--font-body); color: var(--text-primary); overflow-wrap: anywhere }
+.uc04-module .link-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-2) }
+.uc04-module .link-list li { overflow-wrap: anywhere }
+.uc04-module .basis { background: var(--page-background); border: 1px solid var(--border); padding: var(--space-4); border-radius: var(--radius-control); margin-top: var(--space-6); font-size: var(--font-body) }
+.uc04-module .basis>strong { display: block; color: var(--text-secondary); font-size: var(--font-data); margin-bottom: var(--space-3); font-weight: 500 }
+.uc04-module .receivable-total { display: flex; justify-content: space-between; gap: var(--space-4); align-items: center; padding: var(--space-4); background: var(--primary-soft); border: 1px solid var(--primary-border); color: var(--primary); border-radius: var(--radius-control); margin-top: var(--space-6); flex-wrap: wrap }
+.uc04-module .receivable-total span { display: block; font-size: var(--font-caption); color: var(--text-secondary); margin-top: var(--space-1) }
+.uc04-module .receivable-total strong { font-size: var(--font-section); font-variant-numeric: tabular-nums }
+.uc04-module .section-note { font-size: var(--font-data); color: var(--text-secondary); margin-top: var(--space-4) }
+.uc04-module .journal-header { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin-bottom: var(--space-4) }
+.uc04-module .journal-header>span:last-child { color: var(--text-secondary) }
+.uc04-module .section table { min-width: 560px }
+.uc04-module tfoot td { color: var(--success-text); background: var(--success-background); font-size: var(--font-data) }
+.uc04-module .customer-summary { display: flex; gap: var(--space-3); align-items: center; margin-bottom: var(--space-6); padding-bottom: var(--space-4); border-bottom: 1px solid var(--border) }
+.uc04-module .customer-summary span { display: block; color: var(--text-secondary); margin-top: var(--space-1) }
+.uc04-module .debt-fields { display: flex; flex-direction: column; gap: var(--space-6) }
+.uc04-module .balance-projected { background: var(--primary-soft); color: var(--primary); border: 1px solid var(--primary-border); padding: var(--space-4); border-radius: var(--radius-control) }
+.uc04-module .balance-projected dt { font-size: var(--font-data) }
+.uc04-module .balance-projected dd { font-size: 24px; font-weight: 600; margin-top: var(--space-2); font-variant-numeric: tabular-nums }
+.uc04-module .detail-right .alert { margin-top: var(--space-6) }
+.uc04-module .action-bar { position: sticky; bottom: 0; z-index: 5; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card); padding: var(--space-4) var(--space-6); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); margin: var(--space-6) 0; box-shadow: 0 -1px 0 var(--border) }
+.uc04-module .action-bar>span { display: flex; align-items: center; gap: var(--space-2); font-size: var(--font-data); color: var(--text-secondary) }
+.uc04-module .action-bar>div { display: flex; align-items: center; gap: var(--space-2) }
+.uc04-module .result { margin-bottom: var(--space-6); scroll-margin-top: var(--space-6) }
+.uc04-module .result-label { font-size: var(--font-data); font-weight: 500 }
+.uc04-module .result-data { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: var(--space-6); margin: var(--space-6) 0 }
+.uc04-module .process-status { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4) }
+.uc04-module .process-status p { width: 100% }
+.uc04-module .empty { padding: var(--space-8) var(--space-6); text-align: center }
+.uc04-module .empty-icon { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: var(--info-background); color: var(--info-text); margin: 0 auto var(--space-4) }
+.uc04-module .empty p { color: var(--text-secondary); margin: var(--space-3) 0 var(--space-6) }
+.uc04-module .empty .actions { justify-content: center }
+.uc04-module .demo { margin-top: var(--space-6); border: 1px dashed var(--border); border-radius: var(--radius-card); background: var(--info-background); overflow: hidden }
+.uc04-module .button.demo-toggle { width: 100%; justify-content: flex-start; padding: var(--space-4) var(--space-6); color: var(--info-text); gap: var(--space-3); min-height: var(--row-height) }
+.uc04-module .demo-toggle>span { font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .demo-toggle>svg:last-child { margin-left: auto }
+.uc04-module .demo-toggle[aria-expanded="true"]>svg:last-child { transform: rotate(180deg) }
+.uc04-module .demo-content { padding: 0 var(--space-6) var(--space-6); display: flex; flex-direction: column; gap: var(--space-6) }
+.uc04-module .demo-controls { display: flex; align-items: flex-end; gap: var(--space-3); flex-wrap: wrap }
+.uc04-module .demo-controls label { flex: 1; min-width: 260px }
+.uc04-module .demo-content p { color: var(--text-secondary) }
+.uc04-module .demo-reference { padding: var(--space-6); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-card) }
+.uc04-module .demo-reference h2 { margin-bottom: var(--space-6) }
+.uc04-module .demo-reference p { margin-top: var(--space-4) }
+.uc04-module .page-footer { font-size: var(--font-caption); color: var(--text-secondary); padding-top: var(--space-6) }
+.uc04-module .guidelines { display: flex; flex-direction: column; gap: var(--space-6) }
+.uc04-module .guidelines>.page-heading { margin: 0 }
+.uc04-module .guidelines>.button { align-self: flex-start }
+.uc04-module .guidelines .section>.alert { margin-top: var(--space-6) }
+.uc04-module .swatches { display: grid; grid-template-columns: repeat(auto-fit,minmax(155px,1fr)); gap: var(--space-4); margin-top: var(--space-6) }
+.uc04-module .swatch { border: 1px solid var(--border); padding: var(--space-3); border-radius: var(--radius-control); overflow-wrap: anywhere }
+.uc04-module .swatch>div { height: 48px; border: 1px solid var(--border); border-radius: var(--radius-control); margin-bottom: var(--space-2) }
+.uc04-module .swatch strong, .uc04-module .swatch code { display: block; font-size: var(--font-data) }
+.uc04-module .swatch code { color: var(--text-secondary); margin-top: var(--space-1) }
+.uc04-module .typography-samples, .uc04-module .guideline-copy, .uc04-module .component-samples { display: flex; flex-direction: column; gap: var(--space-4); font-size: var(--font-body) }
+.uc04-module .typography-samples { margin-bottom: var(--space-6) }
+.uc04-module .type-data { font-size: var(--font-data) }
+.uc04-module .guidelines .stat { max-width: 440px }
+@media (max-width:1250px) {.uc04-module .stats { gap: var(--space-3) }
+.uc04-module .stat { padding: var(--space-4); gap: var(--space-3) }
+.uc04-module .stat-icon { display: none }
+.uc04-module .stat strong { font-size: 22px }
+.uc04-module .detail-grid { grid-template-columns: minmax(0,1fr) 300px }
+.uc04-module .section { padding: var(--space-6) }}
+@media (max-width:1050px) {.uc04-module .detail-grid { grid-template-columns: 1fr }
+.uc04-module .top-date { display: none }
+.uc04-module .result-data { grid-template-columns: 1fr 1fr }
+.uc04-module .step { font-size: var(--font-caption) }}
+@media (max-width:800px) {.uc04-module { --sidebar-width: 72px }
+.uc04-module .sidebar { padding: var(--space-4) var(--space-2) }
+.uc04-module .brand { justify-content: center; padding: 0 }
+.uc04-module .brand>div:last-child, .uc04-module .nav-heading, .uc04-module .nav-static, .uc04-module .nav-active>span, .uc04-module .sidebar-note, .uc04-module .sidebar-bottom { display: none }
+.uc04-module .button.nav-active { justify-content: center; margin-top: var(--space-8); padding: var(--space-3) }
+.uc04-module .topbar>div:first-child { display: none }
+.uc04-module .topbar { justify-content: flex-end }
+.uc04-module main { padding: var(--space-4) }
+.uc04-module .stats { grid-template-columns: 1fr }
+.uc04-module .stat-icon { display: grid }
+.uc04-module .fields, .uc04-module .result-data { grid-template-columns: 1fr }
+.uc04-module .steps { gap: var(--space-3); padding: var(--space-4); flex-wrap: wrap }
+.uc04-module .step { min-width: 120px }
+.uc04-module .step:not(:last-child)::after { display: none }
+.uc04-module .filters>label:first-child, .uc04-module .filters>.search-label { width: 100%; min-width: 0; flex: auto }
+.uc04-module .heading-note, .uc04-module .demo-toggle>span { display: none }
+.uc04-module .detail-toolbar { align-items: flex-start; flex-direction: column }
+.uc04-module .table-bottom { flex-wrap: wrap }
+.uc04-module .action-bar { padding: var(--space-3); flex-wrap: wrap }
+.uc04-module .action-bar>span { font-size: var(--font-caption) }
+.uc04-module .action-bar>div { margin-left: auto }
+.uc04-module .demo-controls label { min-width: 0; flex-basis: 100% }
+.uc04-module .demo-content { padding: 0 var(--space-4) var(--space-4) }}
+@media (prefers-reduced-motion:reduce) {.uc04-module * { scroll-behavior: auto !important; transition: none !important; animation: none !important }}
+.uc04-module .button.nav-item { justify-content: flex-start; gap: var(--space-3); padding: var(--space-3); margin-top: var(--space-2); color: var(--text-secondary); min-height: var(--row-height) }
+.uc04-module .notification-tabs { display: flex; flex-wrap: wrap; gap: var(--space-3); border-bottom: 1px solid var(--border); margin-bottom: var(--space-6); padding-bottom: var(--space-3) }
+.uc04-module .notification-tabs .button { color: var(--text-secondary) }
+.uc04-module .notification-tabs .tab-current { color: var(--primary); background: var(--primary-soft); font-weight: 600 }
+.uc04-module .notifications > .section, .uc04-module .notifications > .alert, .uc04-module .notifications > .stats { margin-bottom: var(--space-6) }
+.uc04-module .notification-filters, .uc04-module .notification-form { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-4) }
+.uc04-module .notification-filters { margin-bottom: var(--space-6) }
+.uc04-module .notification-filters .search-label { min-width: 0 }
+.uc04-module .debt-checkbox { width: var(--space-4); height: var(--space-4); min-height: 0; accent-color: var(--primary); cursor: pointer }
+.uc04-module .field-error { color: var(--error-text); font-size: var(--font-caption) }
+.uc04-module [aria-invalid="true"] { border-color: var(--error-text) }
+.uc04-module .template-input { width: 100%; min-height: calc(var(--row-height) * 3); border: 1px solid var(--border); border-radius: var(--radius-control); padding: var(--space-3); font: inherit; color: var(--text-primary); resize: vertical; background: var(--surface) }
+.uc04-module .template-input:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px }
+.uc04-module .variable-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block: var(--space-4) }
+.uc04-module .variable-chips .button { background: var(--primary-soft); font-size: var(--font-caption) }
+.uc04-module .message-preview { white-space: pre-wrap }
+.uc04-module .queue-message { max-width: calc(var(--sidebar-width) + var(--space-8)); font-size: var(--font-caption); color: var(--text-secondary) }
+.uc04-module .print-documents { display: flex; flex-direction: column; gap: var(--space-6) }
+.uc04-module .document-brand { color: var(--primary); font-weight: 600; padding-bottom: var(--space-6) }
+.uc04-module .document-brand span { display: block; color: var(--text-secondary); font-size: var(--font-caption); font-weight: 400; margin-top: var(--space-2) }
+.uc04-module .document-signature { text-align: right; margin-top: var(--space-8); color: var(--text-secondary) }
+.uc04-module .document-signature strong { display: block; color: var(--text-primary); margin-top: var(--space-3) }
+.uc04-module .notification-demo { padding-top: var(--space-6) }
+.uc04-module .modal-backdrop { position: fixed; inset: 0; background: color-mix(in srgb,var(--text-primary) 45%, transparent); z-index: 30; display: grid; place-items: center; padding: var(--space-6) }
+.uc04-module .notification-modal { width: min(100%,calc(var(--sidebar-width) * 2 + var(--space-8))); max-height: 90vh; overflow-y: auto }
+.uc04-module .modal-actions { display: flex; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-6) }
+@media (max-width:1050px) {.uc04-module .notification-filters, .uc04-module .notification-form { grid-template-columns: repeat(2,minmax(0,1fr)) }}
+@media (max-width:800px) {.uc04-module .nav-item>span { display: none }
+.uc04-module .button.nav-item { justify-content: center }
+.uc04-module .notification-filters, .uc04-module .notification-form { grid-template-columns: 1fr }
+.uc04-module .notification-tabs { gap: var(--space-1) }}
+@media print {.uc04-module .sidebar, .uc04-module .topbar, .uc04-module .notifications > :not(.print-documents), .uc04-module .page-footer { display: none !important }
+.uc04-module .main-shell { margin: 0 }
+.uc04-module main { padding: 0; max-width: none }
+.uc04-module .print-documents .section { break-after: page; border: none; overflow: visible }
+.uc04-module .print-documents .caption { display: none }
+.uc04-module .print-documents .table-wrap { overflow: visible }
+.uc04-module .print-documents table { min-width: 0 }}
