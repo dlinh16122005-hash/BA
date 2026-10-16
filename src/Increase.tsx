@@ -28,6 +28,7 @@ import {
   sum,
   type RecordData,
 } from "./store"
+import { getUc01PaymentTerms } from "./uc01PaymentTerms"
 import {
   Alert,
   Back,
@@ -58,12 +59,12 @@ export default function Increase({ s, notify }: any) {
   const [from, setFrom] = useState("")
   const [to, setTo] = useState("")
   const pending = s.increases.filter(
-    (x: RecordData) => x.intakeStatus !== "Đã tiếp nhận",
+    (x: RecordData) => x.intakeStatus === "Chưa tiếp nhận UC01",
   )
   const recognized = s.increases.filter(
     (x: RecordData) => x.intakeStatus === "Đã tiếp nhận",
   )
-  const incomplete = pending.filter(
+  const incomplete = s.increases.filter(
     (x: RecordData) => x.intakeStatus === "Chưa hoàn tất",
   )
   const filtered = s.increases.filter((r: RecordData) => {
@@ -79,7 +80,7 @@ export default function Increase({ s, notify }: any) {
           ? r.intakeStatus === status
           : status === "Chưa hoàn tất"
             ? r.intakeStatus === status
-            : r.intakeStatus !== "Đã tiếp nhận")) &&
+            : r.intakeStatus === "Chưa tiếp nhận UC01")) &&
       (!from || r.issuedAt >= from) &&
       (!to || r.issuedAt <= to)
     )
@@ -118,6 +119,10 @@ export default function Increase({ s, notify }: any) {
       (d: RecordData) => d.sourceId === x.id,
     )
     const invoice = s.invoices.find((i: RecordData) => i.id === x.invoiceId)
+    const originalInvoice = x.originalInvoiceId
+      ? s.invoices.find((i: RecordData) => i.id === x.originalInvoiceId)
+      : undefined
+    const paymentTerms = getUc01PaymentTerms(x, invoice, originalInvoice, docs)
     const remaining = x.originalInvoiceId
       ? outstanding(s, x.originalInvoiceId) +
         (accepted ? 0 : x.balanceIncrement)
@@ -233,9 +238,19 @@ export default function Increase({ s, notify }: any) {
                     money(x.allocatedBeforeIntake),
                   ],
                   ["Số còn phải thu sau ghi nhận", money(remaining)],
-                  ["Hạn thanh toán", date(invoice.dueAt)],
+                  ["Hạn thanh toán (F16)", paymentTerms.dueText],
+                  ["Điều khoản thanh toán (F57)", paymentTerms.termText],
+                  ["Trạng thái xác định hạn (F58)", paymentTerms.statusText],
+                  ["Căn cứ xác định hạn (F58)", paymentTerms.basisText],
                 ]}
               />
+              {paymentTerms.requiresVerification && (
+                <Alert tone="amber">
+                  Hạn thanh toán chưa có căn cứ được xác minh đầy đủ. UC01 chỉ
+                  hiển thị dữ liệu nguồn, không tự đặt ngày hạn; không dùng ngày
+                  này để kết luận nợ quá hạn khi chưa xác nhận điều khoản.
+                </Alert>
+              )}
               <Alert>
                 Hóa đơn và hồ sơ chỉ là căn cứ liên kết, không ghi tăng thêm lần
                 nữa
